@@ -1,0 +1,5 @@
+::1 - - [30/Dec/2022:18:00:34 +0000] "GET /documentation.html/ HTTP/1.1" 404 158 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [30/Dec/2022:18:02:54 +0000] "GET /documentation.html/ HTTP/1.1" 404 158 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [30/Dec/2022:18:03:11 +0000] "GET /movies HTTP/1.1" 200 513 "-" "Mozilla/5.0 (iPad; CPU OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.77 Mobile/15E148 Safari/604.1"
+::1 - - [30/Dec/2022:18:03:20 +0000] "GET /documentation.html HTTP/1.1" 404 157 "-" "Mozilla/5.0 (iPad; CPU OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.77 Mobile/15E148 Safari/604.1"
+::1 - - [30/Dec/2022:18:04:19 +0000] "GET /documentation.html HTTP/1.1" 200 562 "-" "Mozilla/5.0 (iPad; CPU OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.77 Mobile/15E148 Safari/604.1"
