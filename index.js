@@ -89,7 +89,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/movies", (req, res) => {
-  res.json(topTen);
+  res.json(topFive);
 });
 
 app.get("/movies/:title", (req, res) => {
@@ -105,14 +105,14 @@ app.get("/movies/:title", (req, res) => {
 app.get("/movies/:title/genre", (req, res) => {
   res.json(
     movies.find((movie) => {
-      if (movie.title === req.params.title) {
-        return [movie.genre];
+      {
+        return movie.title === req.params.title;
       }
-    })
+    }).genre
   );
 });
 
-app.get("/movies/directors/:name", (req, res) => {
+app.get("/directors/:name", (req, res) => {
   res.send(
     `Successful GET request returning data on the director "${req.params.name}"`
   );
