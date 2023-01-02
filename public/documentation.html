@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/styles.css" />
     <title>myFlix</title>
   </head>
   <body>
@@ -14,5 +15,125 @@
       update their personal information, and create a list of their favorite
       movies.
     </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Business logic</th>
+          <th>Endpoint URL</th>
+          <th>Method</th>
+          <th>Request parameters</th>
+          <th>Request format</th>
+          <th>Response format</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Return a list of ALL movies to the user</td>
+          <td>http//:localhost:8080/movies</td>
+          <td>GET</td>
+          <td>none</td>
+          <td>none</td>
+          <td>A JSON object showing all movies</td>
+        </tr>
+        <tr>
+          <td>
+            Return data (description, genre, director, image URL, whether it’s
+            featured or not) about a single movie by title to the user
+          </td>
+          <td>http//:localhost:8080/movies/:title</td>
+          <td>GET</td>
+          <td>:title</td>
+          <td>none</td>
+          <td>A JSON object holding data about a single movie</td>
+        </tr>
+        <tr>
+          <td>
+            Return data about a genre (description) by name/title (e.g.,
+            “Thriller”)
+          </td>
+          <td>http//:localhost:8080/movies/:title/genre</td>
+          <td>GET</td>
+          <td>:title</td>
+          <td>none</td>
+          <td>A JSON object holding data about the genre of a single movie</td>
+        </tr>
+        <tr>
+          <td>
+            Return data about a director (bio, birth year, death year) by name
+          </td>
+          <td>http//:localhost:8080/directors/:name</td>
+          <td>GET</td>
+          <td>:name</td>
+          <td>none</td>
+          <td>A JSON object holding data about all directors</td>
+        </tr>
+        <tr>
+          <td>Allow new users to register</td>
+          <td>http//:localhost:8080/users</td>
+          <td>POST</td>
+          <td>none</td>
+          <td>
+            A JSON object with the respective data to be added (e.g. {firstName:
+            "Tom", lastName: "Hardy", username: "Harom", email:
+            "t.hardy@gmail.com", password: "ahsg1"})
+          </td>
+          <td>
+            A JSON object with the respective data (e.g. {id: 5, firstName:
+            "Tom", lastName: "Hardy", username: "Harom", email:
+            "t.hardy@gmail.com", password: "ahsg1"})
+          </td>
+        </tr>
+        <tr>
+          <td>Allow users to update their user info (username)</td>
+          <td>http//:localhost:8080/users/:id/:username</td>
+          <td>PUT</td>
+          <td>:id, :username</td>
+          <td>none</td>
+          <td>
+            A text message that the username under the respective id was
+            changed.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Allow users to add a movie to their list of favorites (showing only
+            a text that a movie has been added—more on this later)
+          </td>
+          <td>POST</td>
+          <td>http//:localhost:8080/users/:title</td>
+          <td>:title</td>
+          <td>
+            A JSON object holding the data for the movie (e.g. {title:
+            "Matrix"})
+          </td>
+          <td>A text message that the movie has been added</td>
+        </tr>
+        <tr>
+          <td>
+            Allow users to remove a movie from their list of favorites (showing
+            only a text that a movie has been removed—more on this later)
+          </td>
+          <td>DELETE</td>
+          <td>http//:localhost:8080/users/:title</td>
+          <td>:title</td>
+          <td>
+            A JSON object holding the data for the movie (e.g. {title:
+            "Matrix"})
+          </td>
+          <td>A text message that the movie has been deleted</td>
+        </tr>
+        <tr>
+          <td>
+            Allow existing users to deregister (showing only a text that a user
+            email has been removed—more on this later)
+          </td>
+          <td>DELETE</td>
+          <td>http//:localhost:8080/users/:id</td>
+          <td>:id</td>
+          <td>A JSON object holding the data for the user (e.g. {id: "2"})</td>
+          <td>A text message that the user has been deleted</td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
