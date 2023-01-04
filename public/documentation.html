@@ -59,13 +59,13 @@
         </tr>
         <tr>
           <td>
-            Return data about a director (bio, birth year, death year) by name
+            Return data about a director (Name, Bio, Birth, Death) by name
           </td>
           <td>http//:localhost:8080/directors/:name</td>
           <td>GET</td>
           <td>:name</td>
           <td>none</td>
-          <td>A JSON object holding data about all directors</td>
+          <td>A JSON object holding all data about a director</td>
         </tr>
         <tr>
           <td>Allow new users to register</td>
@@ -73,14 +73,14 @@
           <td>POST</td>
           <td>none</td>
           <td>
-            A JSON object with the respective data to be added (e.g. {firstName:
-            "Tom", lastName: "Hardy", username: "Harom", email:
-            "t.hardy@gmail.com", password: "ahsg1"})
+            A JSON object with the respective data to be added (Username:
+            String(required), Password: String(required), Email:
+            String(required), Birthday: Date(optional)})
           </td>
           <td>
-            A JSON object with the respective data (e.g. {id: 5, firstName:
-            "Tom", lastName: "Hardy", username: "Harom", email:
-            "t.hardy@gmail.com", password: "ahsg1"})
+            A JSON object with the respective data (_id: ObjectId, Username:
+            String, Password: String, Email: String, Birthday: Date(optional),
+            FavoriteMovies: ObjectId(ref: Movie))
           </td>
         </tr>
         <tr>
@@ -90,8 +90,9 @@
           <td>:id, :username</td>
           <td>none</td>
           <td>
-            A text message that the username under the respective id was
-            changed.
+            A JSON object with the respective data (_id: ObjectId, Username:
+            String, Password: String, Email: String, Birthday: Date(optional),
+            FavoriteMovies: ObjectId(ref: Movie))
           </td>
         </tr>
         <tr>
@@ -99,38 +100,36 @@
             Allow users to add a movie to their list of favorites (showing only
             a text that a movie has been added—more on this later)
           </td>
-          <td>http//:localhost:8080/users/:title</td>
+          <td>http//:localhost:8080/users/:MovieID</td>
           <td>POST</td>
-          <td>:title</td>
+          <td>:MovieID</td>
           <td>
-            A JSON object holding the data for the movie (e.g. {title:
-            "Matrix"})
+            A JSON object holding the data for the username (Username: String})
           </td>
-          <td>A text message that the movie has been added</td>
+          <td>
+            A JSON object with the respective data (_id: ObjectId, Username:
+            String, Password: String, Email: String, Birthday: Date(optional),
+            FavoriteMovies: ObjectId(ref: Movie))
+          </td>
         </tr>
         <tr>
-          <td>
-            Allow users to remove a movie from their list of favorites (showing
-            only a text that a movie has been removed—more on this later)
-          </td>
-          <td>http//:localhost:8080/users/:title</td>
+          <td>Allow users to remove a movie from their list of favorites</td>
+          <td>http//:localhost:8080/users/:MovieID/:username</td>
           <td>DELETE</td>
-          <td>:title</td>
+          <td>:MovieID, :username</td>
+          <td>None</td>
           <td>
-            A JSON object holding the data for the movie (e.g. {title:
-            "Matrix"})
+            A JSON object with the respective data (_id: ObjectId, Username:
+            String, Password: String, Email: String, Birthday: Date(optional),
+            FavoriteMovies: ObjectId(ref: Movie))
           </td>
-          <td>A text message that the movie has been deleted</td>
         </tr>
         <tr>
-          <td>
-            Allow existing users to deregister (showing only a text that a user
-            email has been removed—more on this later)
-          </td>
-          <td>http//:localhost:8080/users/:id</td>
+          <td>Allow existing users to deregister</td>
+          <td>http//:localhost:8080/users/:username</td>
           <td>DELETE</td>
-          <td>:id</td>
-          <td>A JSON object holding the data for the user (e.g. {id: "2"})</td>
+          <td>:username</td>
+          <td>none</td>
           <td>A text message that the user has been deleted</td>
         </tr>
       </tbody>
