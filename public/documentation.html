@@ -33,7 +33,12 @@
           <td>GET</td>
           <td>none</td>
           <td>none</td>
-          <td>A JSON object showing all movies</td>
+          <td>
+            A JSON object with the respective data for all movies(_id: ObjectId,
+            Title: String, Description: String, Genre: {Name: String,
+            Description: String}, Director: {Name: String, Bio: String, Birth:
+            String, Death: String}, ImagePath: String, Featured: Boolean).
+          </td>
         </tr>
         <tr>
           <td>
@@ -44,7 +49,12 @@
           <td>GET</td>
           <td>:title</td>
           <td>none</td>
-          <td>A JSON object holding data about a single movie</td>
+          <td>
+            A JSON object with the respective data for a single movie(_id:
+            ObjectId, Title: String, Description: String, Genre: {Name: String,
+            Description: String}, Director: {Name: String, Bio: String, Birth:
+            String, Death: String}, ImagePath: String, Featured: Boolean).
+          </td>
         </tr>
         <tr>
           <td>
@@ -55,7 +65,10 @@
           <td>GET</td>
           <td>:title</td>
           <td>none</td>
-          <td>A JSON object holding data about the genre of a single movie</td>
+          <td>
+            A JSON object holding data about the genre of a single movie (Genre:
+            {Name: String, Description: String}, _id: ObjectId)
+          </td>
         </tr>
         <tr>
           <td>
@@ -65,7 +78,10 @@
           <td>GET</td>
           <td>:name</td>
           <td>none</td>
-          <td>A JSON object holding all data about a director</td>
+          <td>
+            A JSON object holding all data about a director (Director: {Name:
+            String, Bio: String, Birth: String, Death: String}, _id: ObjectId)
+          </td>
         </tr>
         <tr>
           <td>Allow new users to register</td>
@@ -80,7 +96,7 @@
           <td>
             A JSON object with the respective data (_id: ObjectId, Username:
             String, Password: String, Email: String, Birthday: Date(optional),
-            FavoriteMovies: ObjectId(ref: Movie))
+            FavoriteMovies: [ObjectId(ref: Movie)])
           </td>
         </tr>
         <tr>
@@ -92,7 +108,7 @@
           <td>
             A JSON object with the respective data (_id: ObjectId, Username:
             String, Password: String, Email: String, Birthday: Date(optional),
-            FavoriteMovies: ObjectId(ref: Movie))
+            FavoriteMovies: [ObjectId(ref: Movie)])
           </td>
         </tr>
         <tr>
@@ -109,7 +125,7 @@
           <td>
             A JSON object with the respective data (_id: ObjectId, Username:
             String, Password: String, Email: String, Birthday: Date(optional),
-            FavoriteMovies: ObjectId(ref: Movie))
+            FavoriteMovies: [ObjectId(ref: Movie)])
           </td>
         </tr>
         <tr>
@@ -121,7 +137,7 @@
           <td>
             A JSON object with the respective data (_id: ObjectId, Username:
             String, Password: String, Email: String, Birthday: Date(optional),
-            FavoriteMovies: ObjectId(ref: Movie))
+            FavoriteMovies: [ObjectId(ref: Movie)])
           </td>
         </tr>
         <tr>
