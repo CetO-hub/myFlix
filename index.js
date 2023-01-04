@@ -2,7 +2,9 @@ const express = require("express"),
   morgan = require("morgan"),
   fs = require("fs"),
   path = require("path"),
-  Models = require("./models.js");
+  Models = require("./models.js"),
+  bodyParser = require("body-parser");
+
 const { default: mongoose } = require("mongoose");
 
 let Movies = Models.Movie;
@@ -89,6 +91,9 @@ let movies = [
 const accessLogStream = fs.createWriteStream(path.join(__dirname, "log.txt"), {
   flags: "a",
 });
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(morgan("combined", { stream: accessLogStream }));
 
