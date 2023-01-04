@@ -1,7 +1,17 @@
 const express = require("express"),
   morgan = require("morgan"),
   fs = require("fs"),
-  path = require("path");
+  path = require("path"),
+  Models = require("./models.js");
+const { default: mongoose } = require("mongoose");
+
+let Movies = Models.Movie;
+let Users = Models.User;
+
+mongoose.connect("mongodb://localhost:27017/myFlixDB", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const app = express();
 
