@@ -178,3 +178,8 @@
 ::1 - - [04/Jan/2023:15:41:24 +0000] "GET /src/css/styles.css HTTP/1.1" 304 - "http://localhost:8080/documentation.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
 ::1 - - [04/Jan/2023:15:42:07 +0000] "GET /documentation.html HTTP/1.1" 200 5624 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
 ::1 - - [04/Jan/2023:15:42:07 +0000] "GET /src/css/styles.css HTTP/1.1" 304 - "http://localhost:8080/documentation.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [05/Jan/2023:15:59:39 +0000] "GET /movies HTTP/1.1" - - "-" "PostmanRuntime/7.30.0"
+::1 - - [05/Jan/2023:16:00:04 +0000] "GET /movies HTTP/1.1" 201 10515 "-" "PostmanRuntime/7.30.0"
+::1 - - [05/Jan/2023:16:04:20 +0000] "GET /movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.30.0"
+::1 - - [05/Jan/2023:16:07:50 +0000] "POST /users HTTP/1.1" 201 119 "-" "PostmanRuntime/7.30.0"
+::1 - - [05/Jan/2023:16:14:58 +0000] "GET /movies HTTP/1.1" 201 10515 "-" "PostmanRuntime/7.30.0"
