@@ -197,3 +197,4 @@
 ::1 - - [05/Jan/2023:16:26:36 +0000] "DELETE /users/chis HTTP/1.1" 201 46 "-" "PostmanRuntime/7.30.0"
 ::1 - - [05/Jan/2023:16:29:54 +0000] "POST /users HTTP/1.1" 201 119 "-" "PostmanRuntime/7.30.0"
 ::1 - - [05/Jan/2023:16:30:29 +0000] "PUT /users/63b6fb02e3e0637b98d4c662/chris HTTP/1.1" 201 120 "-" "PostmanRuntime/7.30.0"
+127.0.0.1 - - [07/Jan/2023:11:10:41 +0000] "POST /users HTTP/1.1" 201 180 "-" "PostmanRuntime/7.30.0"
