@@ -47,20 +47,16 @@ app.get("/", (req, res) => {
   res.send("Hello to the myFlix app");
 });
 
-app.get(
-  "/movies",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    Movies.find()
-      .then((movie) => {
-        res.status(201).json(movie);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500).send(`Error: ${err}`);
-      });
-  }
-);
+app.get("/movies", (req, res) => {
+  Movies.find()
+    .then((movie) => {
+      res.status(201).json(movie);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send(`Error: ${err}`);
+    });
+});
 
 app.get(
   "/movies/:title",
