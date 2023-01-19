@@ -158,7 +158,7 @@ app.put(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     let currentObject = Users.findOne({ _id: req.params.id });
-    let newObject = { currentObject, ...req.body };
+    let { newObject } = { currentObject, ...req.body };
 
     Users.findOneAndUpdate(
       { _id: req.params.id },
