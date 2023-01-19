@@ -154,12 +154,15 @@ app.post(
 );
 
 app.put(
-  "/users/:id/:username",
+  "/users/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    let currentObject = Users.findOne({ _id: req.params.id });
+    let newObject = { currentObject, ...req.body };
+
     Users.findOneAndUpdate(
       { _id: req.params.id },
-      { $set: { Username: req.params.username } },
+      { $set: { newObject } },
       { new: true }
     )
       .then((user) => {
