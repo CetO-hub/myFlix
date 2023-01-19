@@ -156,13 +156,31 @@ app.post(
 app.put(
   "/users/:id",
   passport.authenticate("jwt", { session: false }),
+  [
+    check("Username", "Username is required").isLength({ min: 5 }),
+    check(
+      "Username",
+      "Username contains non alphanumeric characters - not allowed."
+    ).isAlphanumeric(),
+    check("Password", "Password is required").not().isEmpty(),
+    check("Email", "Email does not appear to be valid").isEmail(),
+  ],
   (req, res) => {
-    let currentObject = Users.findOne({ _id: req.params.id });
-    let newObject = { currentObject, ...req.body };
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
 
     Users.findOneAndUpdate(
       { _id: req.params.id },
-      { $set: newObject },
+      {
+        $set: {
+          Username: req.body.Username,
+          Password: req.body.Password,
+          Email: req.body.Email,
+          Birthday: req.body.Birthday,
+        },
+      },
       { new: true }
     )
       .then((user) => {
