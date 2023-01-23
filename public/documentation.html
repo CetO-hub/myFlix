@@ -100,11 +100,18 @@
           </td>
         </tr>
         <tr>
-          <td>Allow users to update their user info (username)</td>
-          <td>http//:localhost:8080/users/:id/:username</td>
+          <td>
+            Allow users to update their user info (username, password, email and
+            birthday)
+          </td>
+          <td>http//:localhost:8080/users/:id</td>
           <td>PUT</td>
-          <td>:id, :username</td>
-          <td>none</td>
+          <td>:id</td>
+          <td>
+            A JSON object with the respective data to be updated (Username:
+            String(required), Password: String(required), Email:
+            String(required), Birthday: Date(optional)})
+          </td>
           <td>
             A JSON object with the respective data (_id: ObjectId, Username:
             String, Password: String, Email: String, Birthday: Date(optional),
