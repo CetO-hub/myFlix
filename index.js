@@ -173,6 +173,21 @@ app.post(
   }
 );
 
+app.get(
+  "/users/:Username",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Users.findOne({ Username: req.params.Username })
+      .then((user) => {
+        res.json(user);
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).send("Error: " + error);
+      });
+  }
+);
+
 app.put(
   "/users/:id",
   passport.authenticate("jwt", { session: false }),
