@@ -33,7 +33,7 @@ let allowedOrigins = [
   "http://localhost:1234",
   "https://myflixmovie.netlify.app",
   "http://localhost:4200",
-  "https://myflix-angular.netlify.app",
+  "https://myflixangular.netlify.app",
   "https://ceto-hub.github.io",
 ];
 
